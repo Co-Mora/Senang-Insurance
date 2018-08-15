@@ -1,0 +1,14 @@
+$bg: linear-gradient(to right, #26D0CE, #1A2980);
+@mixin pad60 {
+    padding: 60px 0;
+}
+
+@mixin grey-background {
+    background: #eaeaea;
+}
+
+@mixin normal-gradient {
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.23);
+}
