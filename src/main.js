@@ -1,5 +1,12 @@
 import Vue from 'vue';
 import App from './App';
+import vueTopprogress from 'vue-top-progress'
+import VuePromiseBtn from 'vue-promise-btn'
+import VueSwal from 'vue-swal'
+
+Vue.use(vueTopprogress)
+Vue.use(VuePromiseBtn)
+Vue.use(VueSwal);
 
 new Vue({
     render: h => h(App)

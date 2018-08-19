@@ -612,3 +612,8 @@ footer {
   outline-color: #d9534f; }
 
 /*# sourceMappingURL=styles.css.map */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

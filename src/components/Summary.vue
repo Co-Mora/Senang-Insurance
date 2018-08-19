@@ -183,12 +183,14 @@
                         </table>
 
                         <div class="d-flex justify-content-center mt-3">
-                            <div class="p-2">
+                            <!-- <div class="p-2">
                                 <a href="index.html" class="btn btn-outline-primary w-150">Save
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="p-2">
-                                <a href="#" class="btn btn-success w-150">Make Payment </a>
+                                <a href="https://api.whatsapp.com/send?phone=60107989480" class="btn btn-success w-150">Whatsapp Us 
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

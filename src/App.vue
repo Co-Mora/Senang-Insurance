@@ -1,16 +1,19 @@
 <template>
     <div>
-       <Index />
+       <get-quote />
     </div>
 </template>
 
 
 <script>
-    import Index from './components/Index';
+    import GetQuote from './components/GetQuote';
+    import Summary from './components/Summary';
+
     export default {
         name: 'App',
         components: {
-            Index
+            GetQuote,
+            Summary
         }
     }
 </script>
