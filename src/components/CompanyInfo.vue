@@ -111,6 +111,7 @@
                 email: null,
                 phoneNo: null,
                 address: null,
+                result: null,
                 typeOfBuilding: '',
                 postalCode: null,
                 currentStep: true,
@@ -157,6 +158,16 @@
                   
                 } else {
                     this.errors = [];
+                    this.result = [{
+                        companyName: this.companyName,
+                        companyNum: this.companyNum,
+                        email: this.email,
+                        phoneNo: this.phoneNo,
+                        address: this.address,
+                        typeOfBuilding: this.typeOfBuilding,
+                        postalCode: this.postalCode,
+                        currentStep: this.currentStep
+                    }]
                     this.nextStep = true;
                     this.$refs.topProgress.start()
                     setTimeout(() => {
@@ -164,6 +175,7 @@
                     }, 1000)
                     setTimeout(() => {
                        this.$emit('onTerm', this.currentStep);
+                        this.$emit('termResult', this.result);
                     }, 2000)
 
                     return new Promise((resolve) => {

@@ -103,7 +103,7 @@
 </template>
 
 <script>
-
+    
     import CoverageModal from './CoverageModal';
     import { vueTopprogress } from 'vue-top-progress'   
     import 'vue-promise-btn/dist/vue-promise-btn.css'
@@ -121,7 +121,9 @@
                 machineryEquipments: null,
                 furnitureFittings: null,
                 miscellanous: null,
+                result: null,
                 errors: [],
+                getResult: false
 
             }
         },
@@ -149,6 +151,12 @@
                      this.errors.push("Miscellanous(RM) is required");
                 } else {
                     this.errors = [];
+                    this.result = [{
+                    sumBuilding: this.sumBuilding,
+                    machineryEquipments: this.machineryEquipments,
+                    furnitureFittings: this.furnitureFittings,
+                    miscellanous: this.miscellanous
+                    }];
                     this.$refs.topProgress.start()
                     setTimeout(() => {
                         this.$refs.topProgress.done()
@@ -157,8 +165,11 @@
                             icon: "success",
                         });
                     }, 1000)
+                    
                     setTimeout(() => {
-                        window.location.href ="/summary"
+                        this.getResult = true;
+                        this.$emit('termResult', this.result);
+                        this.$emit('getResult', this.getResult);
                     }, 3000)
 
                     return new Promise((resolve) => {

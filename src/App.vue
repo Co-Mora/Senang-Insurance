@@ -1,6 +1,6 @@
 <template>
     <div>
-       <get-quote />
+       <router-view></router-view>
     </div>
 </template>
 

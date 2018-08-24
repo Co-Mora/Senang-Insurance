@@ -2,13 +2,34 @@ import Vue from 'vue';
 import App from './App';
 import vueTopprogress from 'vue-top-progress'
 import VuePromiseBtn from 'vue-promise-btn'
-import VueSwal from 'vue-swal'
+import VueSwal from 'vue-swal';
+import Index from './components/Index';
+import GetQuote from './components/GetQuote';
 
+import VueRouter from 'vue-router';
+
+
+Vue.use(VueSwal);
+Vue.use(VueRouter)
 Vue.use(vueTopprogress)
 Vue.use(VuePromiseBtn)
-Vue.use(VueSwal);
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            component: Index
+        },
+        {
+            path: '/get_quote',
+            component: GetQuote
+        },
+    ]
+})
 
 new Vue({
+    router,
     render: h => h(App)
 }).$mount("#app");
 

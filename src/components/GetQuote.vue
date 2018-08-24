@@ -17,9 +17,10 @@
                     </li>
                 </ul>
             </div>
-            <IndustryType v-show="firstStep" @termChange="getNextStep"/>
-            <CompanyInfo v-show="nextStep" @onTerm="getLastStep"/>
-            <SumInsured  v-show="lastStep"/>
+            <IndustryType v-show="firstStep" @termChange="getNextStep" @termResult="industryResult"/>
+            <CompanyInfo v-show="nextStep" @onTerm="getLastStep"  @termResult="companyResult"/>
+            <SumInsured  v-show="lastStep"  @termResult="sumResult" @getResult="isSuccess"/>
+            <Summary v-show="true"  :industryType="industryType" :companyInfo="companyInfo" :sumInsured="sumInsured"/>
         </section>
 
     </div>
@@ -30,6 +31,7 @@
     import IndustryType from './IndustryType';
     import CompanyInfo from './CompanyInfo';
     import SumInsured from './SumInsured';
+    import Summary from './Summary';
 
     export default {
         name: 'GetQuote',
@@ -38,12 +40,18 @@
                 firstStep: true,
                 nextStep: false,
                 lastStep: false,
+                getSummary: false,
+                industryType: null,
+                companyInfo: null,
+                sumInsured: null
             }
         },
         components: {
             IndustryType,
             CompanyInfo,
-            SumInsured
+            SumInsured,
+            Summary
+
         },
         methods: {
             getNextStep(val) {
@@ -53,7 +61,21 @@
             getLastStep(val) {
                 this.lastStep = val;
                 this.nextStep = false;
+            },
+            industryResult(val) {
+                this.industryType = val;
+            },
+            companyResult(val) {
+                this.companyInfo = val;
+            },
+            sumResult(val) {
+                this.sumInsured = val;
+            },
+            isSuccess(val) {
+                this.getSummary = val;
+                this.lastStep = false;
             }
+            
         }
     }
 </script>

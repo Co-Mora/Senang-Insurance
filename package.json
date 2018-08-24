@@ -10,6 +10,7 @@
   "dependencies": {
     "vue": "^2.5.17",
     "vue-promise-btn": "^1.1.0",
+    "vue-router": "^3.0.1",
     "vue-swal": "^0.1.0",
     "vue-top-progress": "^0.7.0"
   },

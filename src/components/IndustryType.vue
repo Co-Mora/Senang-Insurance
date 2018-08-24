@@ -110,9 +110,10 @@
         name: 'IndustryType',
         data() {
             return {
-                selectedIndustry: null,
-                selectedBusiness: null,
+                selectedIndustry: "null",
+                selectedBusiness: "null",
                 nextStep: false,
+                result: null,
                 errors: [],
             }
         },
@@ -135,6 +136,10 @@
                 } else if(!this.selectedBusiness) {
                     this.errors.push("Please Choose At least one of business types");
                 } else {
+                    this.result = [{
+                        selectedIndustry: this.selectedIndustry,
+                        selectedBusiness: this.selectedBusiness
+                    }]
                     this.errors = [];
                     this.nextStep = true;
                      this.$refs.topProgress.start()
@@ -143,6 +148,7 @@
                     }, 1000)
                     setTimeout(() => {
                        this.$emit('termChange', this.nextStep);
+                       this.$emit('termResult', this.result);
                     }, 2000)
                     
                     return new Promise((resolve) => {

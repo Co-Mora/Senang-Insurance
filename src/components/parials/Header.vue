@@ -7,7 +7,7 @@
 
                         <h1>Assure your business future</h1>
                         <h3>No commitment to buy</h3>
-                        <a href="get_quote.html" class="btn btn-success btn-lg w-200 center-block">Get Quote</a>
+                        <a href="get_quote" class="btn btn-success btn-lg w-200 center-block">Get Quote</a>
 
                     </div>
                 </div>
